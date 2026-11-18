@@ -660,7 +660,7 @@ const CONFIG = {
   // --- Contacto (se usa en WhatsApp flotante, botones y footer) ---
   whatsapp:"573045869127",            // +57 304 586 9127
   correo:"______@______.com",         // ← correo oficial (reemplazar)
-  ciudad:"Barranquilla, Atlántico — Colombia",
+  ciudad:"Barranquilla y Baranoa, Atlántico — Colombia",
   redes:{ facebook:"", instagram:"", youtube:"", tiktok:"" }, // ← pega las URLs
 
   // --- MUNDO PASTOR ---
@@ -668,10 +668,10 @@ const CONFIG = {
   brandSub:"Pastor · Psicólogo",
   heroKicker:"Ministerio Paz en el Camino",
   heroSub:"Pastor y psicólogo dedicado a la consejería, la enseñanza de la Palabra y el acompañamiento de quienes buscan ser restaurados.",
-  badgeTop:"Pastor", badgeSub:"y Psicólogo · Consejería y restauración",
+  badgeTop:"Pastor", badgeSub:"Psicólogo clínico · T.P. 708-96",
   perfilTitle:"Un corazón pastoral, una mirada que restaura",
-  perfilP1:"El Pastor Daniel Reyes une el llamado ministerial con la formación en psicología para acompañar a personas y familias en sus procesos de sanidad. Su trabajo integra la fe, la escucha y la orientación profesional.",
-  perfilP2:"Desde la predicación hasta la consejería personal, su propósito es el mismo: que cada persona encuentre libertad, propósito y paz en el camino.",
+  perfilP1:"Psicólogo egresado de la Universidad Metropolitana de Barranquilla, con énfasis clínico (Tarjeta Profesional n.º 708-96 de la Secretaría de Salud del Atlántico). Educador Terapéutico en adicciones, predicador y conferencista.",
+  perfilP2:"Director de la Fundación de Restauración SHALOM, con sedes en Barranquilla y Baranoa. Une el llamado ministerial con la formación clínica para acompañar a cada persona y a su familia en su proceso de restauración.",
   signature:"Pastor Daniel Reyes",
   ministerioLead:"Un ministerio que se vive dentro y fuera del templo, al lado de quien lo necesita.",
   ministerio:[
@@ -715,7 +715,7 @@ const CONFIG = {
   sDonarLead:"Tu ofrenda y tu apoyo social sostienen el proceso de cada persona que busca ser libre.",
   sContactoP:"¿Conoces a alguien que necesita ayuda? Acércate a la Fundación Shalom, estamos para acompañar.",
   sHelp:"Si tú o un ser querido necesita iniciar un proceso de restauración, escríbenos. Daremos el primer paso contigo.",
-  legalShalom:"© "+new Date().getFullYear()+" Fundación de Restauración Shalom · Fundada en 2020. · NIT / Personería jurídica: ______ (reemplazar por el dato oficial).",
+  legalShalom:"© "+new Date().getFullYear()+" Fundación de Restauración SHALOM · Fundada en 2020 · NIT 901402176-2 · Sedes en Barranquilla y Baranoa (Atlántico, Colombia).",
 
   // --- DONACIONES (comunicación directa por WhatsApp del Pastor Daniel Reyes) ---
   donaciones:{
@@ -825,6 +825,8 @@ function contactBlock(id){
     <div><span class="ico">${PIN_SVG}</span>${CONFIG.ciudad}</div>`;
 }
 contactBlock("#cinfo-pastor"); contactBlock("#cinfo-shalom");
+// NIT visible solo en el mundo de la Fundación
+$("#cinfo-shalom").insertAdjacentHTML("beforeend",`<div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span>NIT 901402176-2</div>`);
 function socialBlock(id){
   const box=$(id); box.innerHTML="";
   Object.keys(SOC).forEach(k=>{ const url=CONFIG.redes[k]; if(url){ const a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener"; a.setAttribute("aria-label",k); a.innerHTML=SOC[k]; box.appendChild(a);} });
